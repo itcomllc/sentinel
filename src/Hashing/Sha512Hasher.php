@@ -58,6 +58,11 @@ class Sha512Hasher implements HasherInterface
 
         $salt = substr($hashedValue, 0, $this->saltLength);
 
+        // 変な長さのsaltが存在している・・・
+        if(strlen($hashedValue) <> 128 + $this->saltLength) {
+            $salt = substr($hashedValue, 0, strlen($hashedValue) - 128);
+        }
+
         $digest = $value . $salt;
         for ($i = 1; $i <= $this->stretches; $i++) {
             $digest = hash('sha512', $digest);
