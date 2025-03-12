@@ -67,7 +67,7 @@ class IlluminatePersistenceRepository implements PersistenceRepositoryInterface
      *
      * @return void
      */
-    public function __construct(SessionInterface $session, CookieInterface $cookie, string $model = null, bool $single = false)
+    public function __construct(SessionInterface $session, CookieInterface $cookie, ?string $model = null, bool $single = false)
     {
         $this->model = $model;
 

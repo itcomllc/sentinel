@@ -36,7 +36,7 @@ class NativeSession implements SessionInterface
      *
      * @return void
      */
-    public function __construct(string $key = null)
+    public function __construct(?string $key = null)
     {
         $this->key = $key;
 

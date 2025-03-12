@@ -57,5 +57,5 @@ interface ThrottleRepositoryInterface
      *
      * @return void
      */
-    public function log($ipAddress = null, UserInterface $user = null);
+    public function log($ipAddress = null, ?UserInterface $user = null);
 }

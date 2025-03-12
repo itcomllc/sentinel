@@ -116,7 +116,7 @@ class NativeCookie implements CookieInterface
      *
      * @return void
      */
-    protected function setCookie($value, int $lifetime, string $path = null, string $domain = null, bool $secure = null, bool $httpOnly = null)
+    protected function setCookie($value, int $lifetime, ?string $path = null, ?string $domain = null, ?bool $secure = null, ?bool $httpOnly = null)
     {
         setcookie(
             $this->options['name'],
