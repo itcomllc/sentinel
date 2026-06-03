@@ -45,7 +45,7 @@ class Sentinel
      *
      * @return void
      */
-    public function __construct(SentinelBootstrapper $bootstrapper = null)
+    public function __construct(?SentinelBootstrapper $bootstrapper = null)
     {
         if ($bootstrapper === null) {
             $bootstrapper = new SentinelBootstrapper();
@@ -71,7 +71,7 @@ class Sentinel
      *
      * @return \Cartalyst\Sentinel\Native\SentinelBootstrapper
      */
-    public static function instance(SentinelBootstrapper $bootstrapper = null)
+    public static function instance(?SentinelBootstrapper $bootstrapper = null)
     {
         if (static::$instance === null) {
             static::$instance = new static($bootstrapper);

@@ -55,7 +55,7 @@ class IlluminateUserRepository implements UserRepositoryInterface
      *
      * @return void
      */
-    public function __construct(HasherInterface $hasher, Dispatcher $dispatcher = null, string $model = null)
+    public function __construct(HasherInterface $hasher, ?Dispatcher $dispatcher = null, ?string $model = null)
     {
         $this->hasher = $hasher;
 
@@ -173,7 +173,7 @@ class IlluminateUserRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $credentials, Closure $callback = null): ?UserInterface
+    public function create(array $credentials, ?Closure $callback = null): ?UserInterface
     {
         $user = $this->createModel();
 
@@ -326,7 +326,7 @@ class IlluminateUserRepository implements UserRepositoryInterface
      *
      * @return bool
      */
-    protected function validateUser(array $credentials, int $id = null): bool
+    protected function validateUser(array $credentials, ?int $id = null): bool
     {
         $instance = $this->createModel();
 
